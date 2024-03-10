@@ -1,5 +1,8 @@
 #!/bin/bash
 
+if [ -f "./main" ]; then
+    rm main
+fi
 c++ main.cpp -o main
 
 if [ -n "$1" ]; then
@@ -14,8 +17,8 @@ fi
 
 log_path="./logs/${map_name}_$(date +%Y%m%d%H%M%S).log"
 
-
-./PreliminaryJudge ./main -m $map_path >> ${log_path}
+echo "$log_path"
+./PreliminaryJudge ./main -m $map_path -s 0 >> $log_path
 
 ./replayer/CodeCraft_2024_Replay.x86_64
 

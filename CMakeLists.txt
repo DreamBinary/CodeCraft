@@ -11,4 +11,5 @@ endif (!WIN32)
 AUX_SOURCE_DIRECTORY(. src)
 ADD_EXECUTABLE(main ${src}
         main_init.cpp
+        main.cpp
 )

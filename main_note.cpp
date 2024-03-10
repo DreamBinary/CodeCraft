@@ -87,26 +87,7 @@ void Init() {
     fflush(stdout);
 }
 
-int Input(int zhen) {
-    scanf("%d%d", &id, &money);//帧序号和金钱
-    int num;
-    //物品1000帧消失
-    scanf("%d", &num);//场上新增货物数量
-    for (int i = 1; i <= num; i++) {
-        int x, y, val;
-        scanf("%d%d%d", &x, &y, &val);//货物坐标和价值<100
-        x++, y++;
-        if (ch[x][y] != 'B' && ch[x][y] != '*' && ch[x][y] != '#') {
-            good_time[x][y] = zhen;
-        }
-    }
-    for (int i = 0; i < robot_num; i++) {
-        int sts;
-        scanf("%d%d%d%d", &robot[i].goods, &robot[i].x, &robot[i].y, &sts);
-        robot[i].x++;
-        robot[i].y++;
-        //是否携带物品，坐标，状态
-    }
+void check_boats(int zhen) {
     for (int i = 0; i < 5; i++) {
         scanf("%d%d\n", &boat[i].status, &boat[i].pos);
         //船的状态和ID
@@ -156,11 +137,36 @@ int Input(int zhen) {
             berth[boat[i].berth].size -= temp;
         }
     }
+}
+
+int Input(int zhen) {
+    scanf("%d%d", &id, &money);//帧序号和金钱
+    int num;
+    //物品1000帧消失
+    scanf("%d", &num);//场上新增货物数量
+    for (int i = 1; i <= num; i++) {
+        int x, y, val;
+        scanf("%d%d%d", &x, &y, &val);//货物坐标和价值<100
+        x++, y++;
+        if (ch[x][y] != 'B' && ch[x][y] != '*' && ch[x][y] != '#') {
+            good_time[x][y] = zhen;
+        }
+    }
+    for (int i = 0; i < robot_num; i++) {
+        int sts;
+        scanf("%d%d%d%d", &robot[i].goods, &robot[i].x, &robot[i].y, &sts);
+        robot[i].x++;
+        robot[i].y++;
+        //是否携带物品，坐标，状态
+    }
+
+    check_boats(zhen);
 
     char okk[100];
     scanf("%s", okk);
     return id;
 }
+
 
 void bfs_good(int x, int y, int zhen, int id) {
     int check_move = 0;
@@ -304,7 +310,14 @@ void bfs_berth(int x, int y, int zhen, int id) {
     }
 }
 
-int main() {
+int main(int argc, char *argv[]) {
+//    assert argc == 5
+    w_berth_1 = stod(argv[1]);
+    w_berth_2 = stod(argv[2]);
+    w_berth_3 = stod(argv[3]);
+    w_berth_4 = stod(argv[4]);
+    w_berth_5 = stod(argv[5]);
+
     Init();
     for (int zhen = 1; zhen <= 15000; zhen++) {
 //    	 if(zhen==400){
