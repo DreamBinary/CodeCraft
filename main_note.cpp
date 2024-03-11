@@ -60,7 +60,7 @@ int vis[N][N]; //是否访问过
 int dx[] = {0, 0, -1, 1};
 int dy[] = {1, -1, 0, 0};
 int fa[N][N][2];
-int robot_move[robot_num + 10];
+//int robot_move[robot_num + 10];
 int vis_good[N][N];//货物是否被锁定
 int vis_ban[N][N];//该位置是否被锁定
 int vis_berth[berth_num];//泊位是否被锁定
@@ -211,7 +211,7 @@ void bfs_good(int x, int y, int zhen, int id) {
                     check_move = 1;
                     printf("move %d %d\n", id, i);
                     vis_ban[temp_x][temp_y] = 1;
-                    robot_move[id] = i;
+//                    robot_move[id] = i;
                     return;
 
                 }
@@ -282,9 +282,9 @@ void bfs_berth(int x, int y, int zhen, int id) {
     if (pos.first == -1) return;
     int temp_x = pos.first;
     int temp_y = pos.second;
-    int h = 0;
-    int ck_x = temp_x;
-    int ck_y = temp_y;
+//    int h = 0;
+//    int ck_x = temp_x;
+//    int ck_y = temp_y;
     while (fa[temp_x][temp_y][0] != x || fa[temp_x][temp_y][1] != y) {
         int x1 = fa[temp_x][temp_y][0];
         int y1 = fa[temp_x][temp_y][1];
@@ -301,7 +301,7 @@ void bfs_berth(int x, int y, int zhen, int id) {
             check_move = 1;
             printf("move %d %d\n", id, i);\
             vis_ban[temp_x][temp_y] = 1;
-            robot_move[id] = i;
+//            robot_move[id] = i;
             return;
         }
     }
@@ -327,9 +327,9 @@ int main(int argc, char *argv[]) {
 //         	continue;
 //		 }
         int id = Input(zhen);
-        for (int i = 0; i < robot_num; i++) {
-            robot_move[i] = -1;
-        }
+//        for (int i = 0; i < robot_num; i++) {
+//            robot_move[i] = -1;
+//        }
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
                 vis_good[i][j] = 0;

@@ -15,12 +15,11 @@ else
     map_path="./maps/${paths_array[-1]}"
 fi
 
-log_path="./logs/${map_name}_$(date +%Y%m%d%H%M%S).log"
+map_name=${map_name%.*}
+log_path="./logs/$(date +%Y%m%d%H%M%S)_${map_name}.log"
 
-echo "$log_path"
 ./PreliminaryJudge ./main -m $map_path -s 0 >> $log_path
 
 ./replayer/CodeCraft_2024_Replay.x86_64
 
 wait
-
