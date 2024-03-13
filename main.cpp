@@ -38,6 +38,8 @@ struct Berth {
     int load;
     int arrive;
 
+    int near_good_num;
+
     Berth() {}
 
     Berth(int x, int y, int transport_time, int loading_speed) {
@@ -64,6 +66,7 @@ struct Node {
     }
 };
 
+int total_good = 0;
 //int goods_num;
 int money, boat_capacity, id;
 char ch[N][N];         // 地图
@@ -170,6 +173,7 @@ int Input(int zhen) {
     int num;
     // 物品1000帧消失
     scanf("%d", &num); // 场上新增货物数量
+    total_good += num;
     for (int i = 1; i <= num; i++) {
         int x, y, val;
         scanf("%d%d%d", &x, &y, &val); // 货物坐标和价值<100
@@ -177,6 +181,13 @@ int Input(int zhen) {
         if (ch[x][y] != 'B' && ch[x][y] != '*' && ch[x][y] != '#') {
             good_time[x][y] = zhen;
             good_value[x][y] = val;
+
+            for (int j = 0; j < berth_num; j++) {
+                // (x, y) 在 berth 附件的范围内
+                if (abs(x - berth[j].x) <= 10 && abs(y - berth[j].y) <= 10) {
+                    berth[j].near_good_num++;
+                }
+            }
         }
     }
     for (int i = 0; i < robot_num; i++) {
@@ -197,31 +208,43 @@ int Input(int zhen) {
             for (int t = 0; t < berth_num; t++) {
                 if (vis_berth[t] == 0) {
                     // 计算总性价比
-                    double w;
-                    if (15000 - zhen <= 2100) {
-                        // +
-                        w = 10 * w_boat_size + w_boat_speed - berth[t].transport_time / 1000.0 * w_boat_transport;
-                    } else {
-                        // 1 <= boat_capacity <= 1000
-                        // 1 <= loading_speed <= 5
-                        // 1 <= transport_time <= 1000
-                        // 0.001 <= loading_speed / transport_time <= 5
-                        w = berth[t].size * 1.0 / boat_capacity * w_boat_size +
-                            berth[t].loading_speed / 5.0 * w_boat_speed -
-                            berth[t].transport_time / 1000.0 * w_boat_transport;
+
+                    double forecasting_get_good = total_good * 1.0 / zhen / 5.0;
+                    int need_good = max(boat_capacity - berth[t].size, 0);
+                    double forecasting_time = max(need_good * 1.0 / forecasting_get_good,
+                                                  need_good * 1.0 / berth[t].loading_speed);
+                    if (need_good == 0) forecasting_time = 0;
+                    double w = 0;
+// w = (berth[t].size / (boat capacity +10)) * berth[t].transport_time/berth[t].loading speed + berthit].l!
+                    w = -boat_capacity * 1.0 / berth[t].loading_speed - berth[t].transport_time - forecasting_time;
+//去掉货物价值估计，加入当前泊口货物量
+
+
+//                    double w;
+//                    if (15000 - zhen <= 2100) {
+//                        // +
+//                        w = 10 * w_boat_size + w_boat_speed - berth[t].transport_time / 1000.0 * w_boat_transport;
+//                    } else {
+//                        // 1 <= boat_capacity <= 1000
+//                        // 1 <= loading_speed <= 5
+//                        // 1 <= transport_time <= 1000
+//                        // 0.001 <= loading_speed / transport_time <= 5
+//                        w = berth[t].size * 1.0 / boat_capacity * w_boat_size +
+//                            berth[t].loading_speed / 5.0 * w_boat_speed -
+//                            berth[t].transport_time / 1000.0 * w_boat_transport;
+////
+////                        double tt = berth[t].size * 1.0 / boat_capacity;
+////                        w = tt * berth[t].loading_speed
+////                        w = berth[t].size * 1.0 / (boat_capacity + 20) * w_boat_size +
+////                            berth[t].loading_speed * 1.0 / berth[t].transport_time / 5 * w_boat_speed;
 //
-//                        double tt = berth[t].size * 1.0 / boat_capacity;
-//                        w = tt * berth[t].loading_speed
-//                        w = berth[t].size * 1.0 / (boat_capacity + 20) * w_boat_size +
-//                            berth[t].loading_speed * 1.0 / berth[t].transport_time / 5 * w_boat_speed;
-
-//                        w = berth[t].size * 1.0 / (boat_capacity + 20) * w_boat_size +
-//                            berth[t].loading_speed * 1.0 / berth[t].transport_time * w_boat_speed;
-                        // 248215  double w_boat_speed = 0.5, w_boat_size = 0.5;
-
-//                        w = (berth[t].size / (boat_capacity + 20)) * berth[t].transport_time +
-//                            berth[t].loading_speed * (1 - berth[t].size / (boat_capacity + 20));  // 246367
-                    }
+////                        w = berth[t].size * 1.0 / (boat_capacity + 20) * w_boat_size +
+////                            berth[t].loading_speed * 1.0 / berth[t].transport_time * w_boat_speed;
+//                        // 248215  double w_boat_speed = 0.5, w_boat_size = 0.5;
+//
+////                        w = (berth[t].size / (boat_capacity + 20)) * berth[t].transport_time +
+////                            berth[t].loading_speed * (1 - berth[t].size / (boat_capacity + 20));  // 246367
+//                    }
 
                     if (w > mx) {
                         mx = w;
@@ -328,9 +351,9 @@ void bfs_good(int x, int y, int zhen, int id) {
 
     int temp_x = pos.first;
     int temp_y = pos.second;
-    int h = 0;
-    int ck_x = temp_x;
-    int ck_y = temp_y;
+//    int h = 0;
+//    int ck_x = temp_x;
+//    int ck_y = temp_y;
     while (fa[temp_x][temp_y][0] != x || fa[temp_x][temp_y][1] != y) {
         if (vis_ban[temp_x][temp_y] == 1) {
             for (int i = 0; i < berth_num; i++) {
@@ -365,13 +388,13 @@ void bfs_good(int x, int y, int zhen, int id) {
     }
 }
 
-void bfs_berth(int x, int y, int zhen, int id) {
+void bfs_berth(int x, int y, int id) {
     search_size = -1;
     for (int i = 0; i < berth_num; i++) {
         if (abs(1e9 - pre_dis_berth[i][x][y]) < 0.0001) continue;
         search_berth[++search_size].x =
-                vis_berth[i] * -1000000 + (berth[i].load < boat_capacity) * -100000 + berth[i].arrive * -10000 +
-                pre_dis_berth[i][x][y];
+                -vis_berth[i] * 1000 - (berth[i].load < boat_capacity) * 100 - berth[i].arrive * 10 +
+                pre_dis_berth[i][x][y] - berth[i].near_good_num * (i % 2);
         search_berth[search_size].id = i;
     }
     sort(search_berth, search_berth + search_size + 1);
@@ -504,6 +527,14 @@ int main(int argc, char *argv[]) {
                 if (good_time[robot[i].x][robot[i].y] > 0 && zhen - good_time[robot[i].x][robot[i].y] < 1000) {
                     printf("get %d\n", i);
                     vis_ban[robot[i].x][robot[i].y] = 1;
+                    total_good--;
+
+                    for (int j = 0; j < berth_num; j++) {
+                        // (x, y) 在 berth 附件的范围内
+                        if (abs(robot[i].x - berth[j].x) <= 10 && abs(robot[i].y - berth[j].y) <= 10) {
+                            berth[j].near_good_num--;
+                        }
+                    }
                 } // 拿着货物 而且在码头
             } else if (robot[i].goods == 1) {
                 if (ch[robot[i].x][robot[i].y] == 'B') {
@@ -517,6 +548,13 @@ int main(int argc, char *argv[]) {
             if (robot[i].goods == 0) {
                 if (good_time[robot[i].x][robot[i].y] > 0 && zhen - good_time[robot[i].x][robot[i].y] < 1000) {
                     good_time[robot[i].x][robot[i].y] = 0;
+
+                    for (int j = 0; j < berth_num; j++) {
+                        // (x, y) 在 berth 附件的范围内
+                        if (abs(robot[i].x - berth[j].x) <= 10 && abs(robot[i].y - berth[j].y) <= 10) {
+                            berth[j].near_good_num--;
+                        }
+                    }
                 } else {
                     bfs_good(robot[i].x, robot[i].y, zhen, i);
                 }
@@ -524,12 +562,11 @@ int main(int argc, char *argv[]) {
                 if (ch[robot[i].x][robot[i].y] == 'B')
                     continue;
                 else
-                    bfs_berth(robot[i].x, robot[i].y, zhen, i);
+                    bfs_berth(robot[i].x, robot[i].y, i);
             }
         }
         puts("OK");
         fflush(stdout);
     }
-
     return 0;
 }

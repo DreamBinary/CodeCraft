@@ -22,7 +22,6 @@
   <component name="ChangeListManager">
     <list default="true" id="20c8ef2c-935f-44af-a61b-bc28e091c25a" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,8 +93,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake 应用程序.main" />
       <item itemvalue="C/C++ 文件.main.cpp" />
+      <item itemvalue="CMake 应用程序.main" />
     </list>
     <recent_temporary>
       <list>
@@ -130,7 +129,8 @@
       <workItem from="1710175221657" duration="353000" />
       <workItem from="1710229957411" duration="6812000" />
       <workItem from="1710249596297" duration="3969000" />
-      <workItem from="1710253609968" duration="6000" />
+      <workItem from="1710253609968" duration="53000" />
+      <workItem from="1710303246053" duration="1437000" />
     </task>
     <servers />
   </component>

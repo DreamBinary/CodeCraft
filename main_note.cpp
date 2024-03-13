@@ -235,7 +235,7 @@ void bfs_good(int x, int y, int zhen, int id) {
     }
 }
 
-void bfs_berth(int x, int y, int zhen, int id) {
+void bfs_berth(int x, int y, int id) {
     int check_move = 0;
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= n; j++)
@@ -361,7 +361,7 @@ int main(int argc, char *argv[]) {
                 }
             } else if (robot[i].goods == 1) {
                 if (ch[robot[i].x][robot[i].y] == 'B') continue;
-                else bfs_berth(robot[i].x, robot[i].y, zhen, i);
+                else bfs_berth(robot[i].x, robot[i].y, i);
             }
         }
         puts("OK");
