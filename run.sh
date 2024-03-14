@@ -20,6 +20,11 @@ log_path="./logs/$(date +%Y%m%d%H%M%S)_${map_name}.log"
 
 ./PreliminaryJudge ./main -m $map_path -s 0 >> $log_path
 
+
+echo e "\n\n\n" >> $log_path
+
+cat ./main.cpp >> log_path
+
 ./replayer/CodeCraft_2024_Replay.x86_64
 
 wait

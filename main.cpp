@@ -13,7 +13,7 @@ const int N = 210;
 
 //double w_berth_size = 0.5, w_berth_speed = 0.5, w_berth_dis = 0.5; // w_berth_size > w_berth_dis > w_berth_speed
 double w_good_val = 0.5, w_good_dis = 0.5;
-double w_boat_speed = 4, w_boat_size = 250, w_boat_transport = 2;
+double w_boat_speed = 4, w_boat_transport = 2;
 
 // w_good_1:货物价值 w_good_2:货物距离
 struct Robot {
@@ -210,15 +210,15 @@ int Input(int zhen) {
                     double w;
                     if (15000 - zhen <= 2100) {
                         // +
-                        w = 10 * w_boat_size + w_boat_speed - berth[t].transport_time / 1000.0 * w_boat_transport;
+                        w = 100 * (w_boat_speed - berth[t].transport_time / 1000.0 * w_boat_transport);
                     } else {
                         // 1 <= boat_capacity <= 1000
                         // 1 <= loading_speed <= 5
                         // 1 <= transport_time <= 1000
                         // 0.001 <= loading_speed / transport_time <= 5
-                        w = berth[t].size * 1.0 / boat_capacity * w_boat_size +
-                            berth[t].loading_speed / 5.0 * w_boat_speed -
-                            berth[t].transport_time / 1000.0 * w_boat_transport;
+                        w = berth[t].size * 1.0 / boat_capacity *
+                            (berth[t].loading_speed / 5.0 * w_boat_speed -
+                             berth[t].transport_time / 1000.0 * w_boat_transport);
 //
 //                        double tt = berth[t].size * 1.0 / boat_capacity;
 //                        w = tt * berth[t].loading_speed
@@ -383,6 +383,10 @@ void bfs_berth(int x, int y, int id) {
         search_berth[++search_size].x =
                 -vis_berth[i] * 1000 - (berth[i].load < boat_capacity) * 100 - berth[i].arrive * 10 +
                 pre_dis_berth[i][x][y] - berth[i].near_good_num * (i % 2);
+
+//        search_berth[++search_size].x =
+//                -vis_berth[i] * 1000 - (berth[i].load < boat_capacity) * 10 - berth[i].arrive * 10 +
+//                pre_dis_berth[i][x][y] - berth[i].near_good_num * (i % 3) * berth[i].arrive * 1000;
         search_berth[search_size].id = i;
     }
     sort(search_berth, search_berth + search_size + 1);
@@ -498,6 +502,16 @@ int main(int argc, char *argv[]) {
             ban_boot[i][0] = ban_boot[i][1] = 0;
         }
         int id = Input(zhen);
+        for (int i = 1; i <= n; i++)
+            for (int t = 1; t <= n; t++) {
+                if (zhen - good_time[i][t] == 1000) {
+                    for (int j = 0; j < berth_num; j++) {
+                        if (pre_dis_berth[j][i][t] <= 20) {
+                            berth[j].near_good_num--;
+                        }
+                    }
+                }
+            }
 //        for (int i = 0; i < robot_num; i++) {
 //            robot_move[i] = -1;
 //        }
@@ -546,16 +560,6 @@ int main(int argc, char *argv[]) {
                     bfs_berth(robot[i].x, robot[i].y, i);
             }
         }
-        for (int i = 1; i <= n; i++)
-            for (int t = 1; t <= n; t++) {
-                if (zhen - good_time[i][t] == 1000) {
-                    for (int j = 0; j < berth_num; j++) {
-                        if (pre_dis_berth[j][i][i] <= 20) {
-                            berth[j].near_good_num--;
-                        }
-                    }
-                }
-            }
         puts("OK");
         fflush(stdout);
     }
