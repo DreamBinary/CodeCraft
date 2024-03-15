@@ -4,21 +4,21 @@ from skopt.space import Real
 import glob
 from log_util import get_log
 from multiprocessing import Pool
-
 from tqdm import tqdm
 
 log, file_path = get_log("train")
 
 total_run = 10000
 
-pbar = tqdm(total=total_run)
-
 
 def train(path, params):
     # 执行命令并获取输出
     # result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    cmd = f'./PreliminaryJudge -m {path} "./main {params}" -l NONE'
-    # print(cmd)
+    # judge = "./PreliminaryJudge" + path.split(".txt")[0][-1]
+    # exe = "./main" + path.split(".txt")[0][-1]
+    judge = "./PreliminaryJudge"
+    exe = "./main"
+    cmd = f'{judge} -m {path} "{exe} {params}" -l NONE'
     result = os.popen(cmd).read()
     output = dict(eval(result))
     # {"status":"Successful","score":89424}
@@ -42,8 +42,12 @@ def run_program(params):
 
     with Pool() as p:
         score_list = p.starmap(train, [(path, params) for path in paths])
-
     score_sum = sum(score_list)
+    # score_list = []
+    # for path in paths:
+    #     score_list.append(train(path, params))
+    # score_sum = sum(score_list)
+
     # for path in tqdm(paths):
     #     cmd = f'./PreliminaryJudge -m {path} "./main {params}" -l NONE'
     #     # 执行命令并获取输出
@@ -57,12 +61,11 @@ def run_program(params):
     #         score = 0  # 如果输出不是有效的JSON，设置得分为0
     #     log.info(f"Map: {path}, Score: {score}")
     #     score_sum += score
-    avg_score = score_sum / len(paths)
+    avg_score = score_sum / len(score_list)
     log.info(f"params: {params}")
     log.info(f"Score list: {score_list}")
     log.info(f"Total score: {score_sum}")
     log.info(f"Average score: {avg_score}")
-    pbar.update(1)
     return -avg_score
 
 
@@ -88,7 +91,7 @@ if __name__ == "__main__":
     ]
 
     # 使用贝叶斯优化
-    result = forest_minimize(run_program, param_space, n_calls=15000, callback=[print_status], random_state=0,
+    result = forest_minimize(run_program, param_space, n_calls=total_run, callback=[print_status], random_state=0,
                              verbose=True)
 
     # 输出最优参数及其得分
