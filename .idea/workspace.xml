@@ -3,79 +3,20 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader">{
-  &quot;useNewFormat&quot;: true
-}</component>
-  <component name="CMakeReloadState">
-    <option name="reloaded" value="true" />
-  </component>
-  <component name="CMakeRunConfigurationManager">
-    <generated>
-      <config projectName="CodeCraftSDK" targetName="main" />
-    </generated>
-  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20c8ef2c-935f-44af-a61b-bc28e091c25a" name="更改" comment="">
+    <list default="true" id="6d11c1ff-d6f0-4bb4-9dc6-b39afa2d6b78" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CodeCraft.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CodeCraft.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311141244_map-3.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311142210_map-3.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311142640_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311142955_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311143317_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311163010_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311164856_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311170606_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311171318_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311171923_map-3.10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311200146_map-3.10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311200708_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311201054_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311210200_map-3.10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311210726_map-3.10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311211221_map-3.10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311214036_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311214359_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240311225251_map-3.10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240312155808_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240312160140_map-3.10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240312160819_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240312161101_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240312162153_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240312162629_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240312212221_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240312214936_map-3.10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240312215135_map-3.09.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240312215331_map-3.08.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240312215442_map-3.07.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240312222349_map-3.07.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240313130037_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240313130440_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240313130906_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240313131043_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240313133719_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240313140605_map-3.11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240313161737_map-3.13.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240313220427_map-3.13.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240313220604_map-3.12.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/map-3.07.txt_20240310140301.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/map-3.08.txt_20240310140050.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/map-3.09.txt_20240310135542.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/map-3.09.txt_20240310135719.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/map-3.09.txt_20240310135904.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/map-3.10.txt_20240310133219.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/map-3.9.txt_20240310123622.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/map-3.9.txt_20240310132522.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/map-3.9.txt_20240310132757.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.zip" beforeDir="false" afterPath="$PROJECT_DIR$/main.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,118 +26,129 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectApplicationVersion">
-    <option name="ide" value="CLion" />
-    <option name="majorVersion" value="2023" />
-    <option name="minorVersion" value="3.4" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2dOB0i2c2CqXBUGFWq58jXfJzcK" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="2dgJ94mJx2IuHzP68fuRng39PYF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C/C++ 文件.main.cpp.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/root/CodeCraft&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CPPToolchains&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;//wsl.localhost/Ubuntu/root/CodeCraft/main_note.cpp&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.tmp.executor": "Run",
+    "Python.train.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "V:/MyResume"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl.localhost\Ubuntu\root\CodeCraft" />
-      <recent name="\\wsl.localhost\Ubuntu\root\CodeCraft\maps" />
-      <recent name="\\wsl.localhost\Ubuntu\root\CodeCraft\doc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl.localhost\Ubuntu\root\CodeCraft" />
     </key>
   </component>
-  <component name="RunManager" selected="C/C++ 文件.main.cpp">
-    <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CodeCraftSDK" TARGET_NAME="main" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CodeCraftSDK" RUN_TARGET_NAME="main">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Python.train">
+    <configuration name="tmp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CodeCraft" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tmp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
-    <configuration name="main.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CodeCraft" TARGET_NAME="main.cpp" CONFIG_NAME="main.cpp">
-      <option name="sourceFile" value="main.cpp" />
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
-      </method>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CodeCraft" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="CMake 应用程序.main" />
-      <item itemvalue="C/C++ 文件.main.cpp" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="C/C++ 文件.main.cpp" />
+        <item itemvalue="Python.train" />
+        <item itemvalue="Python.tmp" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-5a2391486177-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13763.11" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="20c8ef2c-935f-44af-a61b-bc28e091c25a" name="更改" comment="" />
-      <created>1709869024668</created>
+      <changelist id="6d11c1ff-d6f0-4bb4-9dc6-b39afa2d6b78" name="更改" comment="" />
+      <created>1710423636903</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1709869024668</updated>
-      <workItem from="1709869025869" duration="2496000" />
-      <workItem from="1709906202578" duration="2054000" />
-      <workItem from="1709972658161" duration="5048000" />
-      <workItem from="1709985426429" duration="2772000" />
-      <workItem from="1709988347586" duration="3485000" />
-      <workItem from="1710044158215" duration="6790000" />
-      <workItem from="1710060077444" duration="175000" />
-      <workItem from="1710137383549" duration="1580000" />
-      <workItem from="1710141794755" duration="164000" />
-      <workItem from="1710144360750" duration="159000" />
-      <workItem from="1710145047069" duration="2522000" />
-      <workItem from="1710147703399" duration="1306000" />
-      <workItem from="1710158468155" duration="1010000" />
-      <workItem from="1710159827616" duration="3977000" />
-      <workItem from="1710167158128" duration="433000" />
-      <workItem from="1710168569792" duration="1403000" />
-      <workItem from="1710175221657" duration="353000" />
-      <workItem from="1710229957411" duration="6812000" />
-      <workItem from="1710249596297" duration="3969000" />
-      <workItem from="1710253609968" duration="53000" />
-      <workItem from="1710303246053" duration="6499000" />
-      <workItem from="1710316643197" duration="818000" />
-      <workItem from="1710317833299" duration="475000" />
-      <workItem from="1710338354889" duration="1988000" />
-      <workItem from="1710398582279" duration="2869000" />
-      <workItem from="1710401603119" duration="120000" />
-      <workItem from="1710401928461" duration="3615000" />
-      <workItem from="1710421178241" duration="3000" />
+      <updated>1710423636903</updated>
+      <workItem from="1710423637704" duration="5121000" />
+      <workItem from="1710429019397" duration="414000" />
+      <workItem from="1710465025501" duration="3497000" />
+      <workItem from="1710468609341" duration="184000" />
+      <workItem from="1710471678940" duration="2962000" />
     </task>
     <servers />
   </component>
-  <component name="VCPKGProject">
-    <isAutomaticCheckingOnLaunch value="false" />
-    <isAutomaticFoundErrors value="true" />
-    <isAutomaticReloadCMake value="true" />
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CodeCraft$train.coverage" NAME="train 覆盖结果" MODIFIED="1710468296873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CodeCraft$tmp.coverage" NAME="tmp 覆盖结果" MODIFIED="1710465970117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
