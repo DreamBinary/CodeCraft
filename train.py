@@ -4,11 +4,10 @@ from skopt.space import Real
 import glob
 from log_util import get_log
 from multiprocessing import Pool
-from tqdm import tqdm
 
 log, file_path = get_log("train")
 
-total_run = 10000
+total_run = 1000
 
 
 def train(path, params):
@@ -32,10 +31,10 @@ def train(path, params):
 
 def run_program(params):
     # 解包参数
-    w_good_val, w_good_dis, w_good_disappear, w_boat_speed, w_boat_size, w_boat_transport, w_berth_vis, w_berth_fill, w_berth_dis, w_berth_near, w_berth_arrive = params
+    w_good_val, w_good_dis, w_good_disappear, w_boat_speed, w_boat_size, w_boat_transport, w_berth_vis, w_berth_fill, w_berth_dis, w_berth_arrive = params
 
     params = " ".join(map(str, [w_good_val, w_good_dis, w_good_disappear, w_boat_speed, w_boat_size, w_boat_transport,
-                                w_berth_vis, w_berth_fill, w_berth_dis, w_berth_near, w_berth_arrive]))
+                                w_berth_vis, w_berth_fill, w_berth_dis, w_berth_arrive]))
 
     paths = sorted(glob.glob("./maps/*.txt"))
     # print(train(paths[0], params))
@@ -86,7 +85,6 @@ if __name__ == "__main__":
         Real(0, 1.0, name='w_berth_vis'),
         Real(0, 1.0, name='w_berth_fill'),
         Real(0, 1.0, name='w_berth_dis'),
-        Real(0, 1.0, name='w_berth_near'),
         Real(0, 1.0, name='w_berth_arrive'),
     ]
 

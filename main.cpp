@@ -12,9 +12,9 @@ const int N = 210;
 // double w_good_1 = 1000, w_good_2 = 1000, w_good_3 = 0.5;
 
 //double w_berth_size = 0.5, w_berth_speed = 0.5, w_berth_dis = 0.5; // w_berth_size > w_berth_dis > w_berth_speed
-double w_good_val = 0.8, w_good_dis = 0.2, w_good_disappear = 0.05;
-double w_boat_speed = 4, w_boat_size = 250, w_boat_transport = 2;
-double w_berth_vis = 1000, w_berth_fill = 100, w_berth_dis = 1, w_berth_near = 1, w_berth_arrive = 10;
+double w_good_val = 0.0005219068103488046, w_good_dis = 0.7612874007557432, w_good_disappear = 0.04765758497181795;
+double w_boat_speed = 0.41067724512928994, w_boat_size = 0.5450687184080321, w_boat_transport = 0.02304401890913133;
+double w_berth_vis = 0.25073264917064636, w_berth_fill = 0.9197148650811919, w_berth_dis = 0.06689609151687516, w_berth_arrive = 0.6409714467691711;
 
 // w_good_1:货物价值 w_good_2:货物距离
 struct Robot {
@@ -38,8 +38,6 @@ struct Berth {
     int size;
     int load;
     int arrive;
-
-    int near_good_num;
 
     Berth() {}
 
@@ -76,7 +74,7 @@ int vis[N][N];         // 是否访问过
 int dx[] = {0, 0, -1, 1};
 int dy[] = {1, -1, 0, 0};
 int fa[N][N][2];
-//int robot_move[robot_num + 10];
+int robot_move[robot_num + 10][2];
 int vis_good[N][N];          // 货物是否被锁定
 int vis_ban[N][N];          // 该位置是否被锁定
 int vis_berth[berth_num]; // 泊位是否被锁定
@@ -181,13 +179,6 @@ int Input(int zhen) {
         if (ch[x][y] != 'B' && ch[x][y] != '*' && ch[x][y] != '#') {
             good_time[x][y] = zhen;
             good_value[x][y] = val;
-
-            for (int j = 0; j < berth_num; j++) {
-                // (x, y) 在 berth 附件的范围内
-                if (pre_dis_berth[j][x][y] <= 20) {
-                    berth[j].near_good_num++;
-                }
-            }
         }
     }
     for (int i = 0; i < robot_num; i++) {
@@ -290,7 +281,7 @@ void bfs_good(int x, int y, int zhen, int id) {
             vis[i][j] = 0;
     queue<pair<int, int>> q;
     queue<int> distance;
-    q.emplace(x, y);
+    q.push({x, y});
     distance.push(0);
     vis[x][y] = 1;
     double mx = -1e9;
@@ -323,13 +314,11 @@ void bfs_good(int x, int y, int zhen, int id) {
                 continue;
             if (vis[nx][ny] == 1)
                 continue;
-            if ((vis_ban[nx][ny] == 1 && (abs(nx - x) + abs(ny - y)) < 3) || vis_ban[nx][ny] >= 2)
-                continue;
-            if (nx == ban_boot[id][0] && ny == ban_boot[id][1])
+            if ((vis_ban[nx][ny] == 1 && (abs(nx - x) + abs(ny - y)) <= 3) || vis_ban[nx][ny] >= 2)
                 continue;
             fa[nx][ny][0] = now.first;
             fa[nx][ny][1] = now.second;
-            q.emplace(nx, ny);
+            q.push({nx, ny});
             distance.push(dis + 1);
             vis[nx][ny] = 1;
         }
@@ -341,25 +330,12 @@ void bfs_good(int x, int y, int zhen, int id) {
     targer_good[id][1] = pos.second;
     int temp_x = pos.first;
     int temp_y = pos.second;
-//    int h = 0;
-//    int ck_x = temp_x;
-//    int ck_y = temp_y;
     while (fa[temp_x][temp_y][0] != x || fa[temp_x][temp_y][1] != y) {
         if (vis_ban[temp_x][temp_y] == 1) {
-            for (int i = 0; i < berth_num; i++) {
-                if (temp_x == berth[i].x && temp_y == berth[i].y) {
-                    ban_boot[i][0] = temp_x;
-                    ban_boot[i][1] = temp_y;
-                    break;
-                }
-            }
             vis_ban[temp_x][temp_y]++;
         }
         int x1 = fa[temp_x][temp_y][0];
         int y1 = fa[temp_x][temp_y][1];
-        if (fa[x1][y1][0] == x && fa[x1][y1][1] == y) {
-            vis_ban[temp_x][temp_y] = 1;
-        }
         temp_x = x1;
         temp_y = y1;
     }
@@ -367,14 +343,12 @@ void bfs_good(int x, int y, int zhen, int id) {
     int di_y = temp_y - y;
     for (int i = 0; i < 4; i++) {
         if (di_x == dx[i] && di_y == dy[i]) {
-            check_move = 1;
             printf("move %d %d\n", id, i);
-            vis_ban[temp_x][temp_y] = 1;
+            robot_move[id][0] = temp_x;
+            robot_move[id][1] = temp_y;
+            vis_ban[temp_x][temp_y] += 1;
             break;
         }
-    }
-    if (check_move == 0) {
-        vis_ban[x][y] = 1;
     }
 }
 
@@ -382,23 +356,17 @@ void bfs_berth(int x, int y, int id) {
     search_size = -1;
     for (int i = 0; i < berth_num; i++) {
         if (abs(1e9 - pre_dis_berth[i][x][y]) < 0.0001) continue;
-        // search_berth[++search_size].x =
-        //         -vis_berth[i] * 1000 - (berth[i].load < boat_capacity) * 100 - berth[i].arrive * 10 +
-        //         pre_dis_berth[i][x][y] - berth[i].near_good_num * (i % 2);
         search_berth[++search_size].x =
                 -vis_berth[i] * w_berth_vis - (berth[i].load < boat_capacity) * w_berth_fill -
                 berth[i].arrive * w_berth_arrive +
-                pre_dis_berth[i][x][y] * w_berth_dis - berth[i].near_good_num * w_berth_near;
+                pre_dis_berth[i][x][y] * w_berth_dis;
         search_berth[search_size].id = i;
     }
     sort(search_berth, search_berth + search_size + 1);
-//    double mx = -1e9;
     pair<int, int> pos;
     pos = {-1, -1};
     for (int l = 0; l <= search_size; l++) {
-        // if(pos.first!=-1) break;
         int search_id = search_berth[l].id;
-//        int check_move = 0;
         for (int i = 1; i <= n; i++)
             for (int j = 1; j <= n; j++)
                 vis[i][j] = 0;
@@ -407,12 +375,23 @@ void bfs_berth(int x, int y, int id) {
         }
         priority_queue<Node, vector<Node>, greater<Node>> q;
         q.push({x, y, 0, pre_dis_berth[search_id][x][y]}); // 机器人初始位置
-//        int ck = 0;
         vis[x][y] = 1;
         int re = 0;
-//        int ck_berth = 0;
         while (!q.empty()) {
             re++;
+            if (re > 500) {
+                int mi = 1e9;
+                for (int i = 0; i < 4; i++) {
+                    int nx = x + dx[i];
+                    int ny = y + dy[i];
+                    if (vis_ban[nx][ny] > 0) continue;
+                    if (pre_dis_berth[search_id][nx][ny] < mi) {
+                        mi = pre_dis_berth[search_id][nx][ny];
+                        pos = {nx, ny};
+                    }
+                }
+                break;
+            }
             Node node = q.top();
             pair<int, int> now = {node.x, node.y};
             q.pop();
@@ -420,9 +399,7 @@ void bfs_berth(int x, int y, int id) {
             if (ch[now.first][now.second] == 'B' && vis_search_berth[flag_berth[now.first][now.second]] == 0 &&
                 flag_berth[now.first][now.second] == search_id) {
                 int id = flag_berth[now.first][now.second];
-//                ck_berth = 1;
                 vis_search_berth[id] = 1;
-//                mx = 2;
                 pos = now;
                 break;
             }
@@ -437,9 +414,7 @@ void bfs_berth(int x, int y, int id) {
                     continue;
                 if (vis[nx][ny] == 1)
                     continue;
-                if ((vis_ban[nx][ny] == 1 && (abs(nx - x) + abs(ny - y)) < 3) || vis_ban[nx][ny] >= 2)
-                    continue;
-                if (nx == ban_boot[id][0] && ny == ban_boot[id][1])
+                if ((vis_ban[nx][ny] == 1 && (abs(nx - x) + abs(ny - y)) <= 3) || vis_ban[nx][ny] >= 2)
                     continue;
                 fa[nx][ny][0] = now.first;
                 fa[nx][ny][1] = now.second;
@@ -457,25 +432,13 @@ void bfs_berth(int x, int y, int id) {
     int temp_x = pos.first;
     int temp_y = pos.second;
     int h = 0;
-//    int ck_x = temp_x;
-//    int ck_y = temp_y;
     while (fa[temp_x][temp_y][0] != x || fa[temp_x][temp_y][1] != y) {
         h++;
         if (vis_ban[temp_x][temp_y] == 1) {
-            for (int i = 0; i < berth_num; i++) {
-                if (temp_x == berth[i].x && temp_y == berth[i].y) {
-                    ban_boot[i][0] = temp_x;
-                    ban_boot[i][1] = temp_y;
-                    break;
-                }
-            }
             vis_ban[temp_x][temp_y]++;
         }
         int x1 = fa[temp_x][temp_y][0];
         int y1 = fa[temp_x][temp_y][1];
-        if (fa[x1][y1][0] == x && fa[x1][y1][1] == y) {
-            vis_ban[temp_x][temp_y] = 1;
-        }
         temp_x = x1;
         temp_y = y1;
     }
@@ -484,7 +447,9 @@ void bfs_berth(int x, int y, int id) {
     for (int i = 0; i < 4; i++) {
         if (di_x == dx[i] && di_y == dy[i]) {
             printf("move %d %d\n", id, i);
-            vis_ban[temp_x][temp_y] = 1;
+            robot_move[id][0] = temp_x;
+            robot_move[id][1] = temp_y;
+            vis_ban[temp_x][temp_y] += 1;
             break;
         }
     }
@@ -495,43 +460,30 @@ int main(int argc, char *argv[]) {
     //     std::cerr << "Usage: " << argv[0] << " <w_good_val> <w_good_dis> <w_good_disappear> <w_boat_speed> <w_boat_size> <w_boat_transport> <w_berth_vis> <w_berth_fill> <w_berth_dis> <w_berth_near>\n";
     //     return 1;
     // }
-    w_good_val = std::atof(argv[1]);
-    w_good_dis = std::atof(argv[2]);
-    w_good_disappear = std::atof(argv[3]);
-    w_boat_speed = std::atof(argv[4]);
-    w_boat_size = std::atof(argv[5]);
-    w_boat_transport = std::atof(argv[6]);
-    w_berth_vis = std::atof(argv[7]);
-    w_berth_fill = std::atof(argv[8]);
-    w_berth_dis = std::atof(argv[9]);
-    w_berth_near = std::atof(argv[10]);
-    w_berth_arrive = std::atof(argv[11]);
+//    w_good_val = std::atof(argv[1]);
+//    w_good_dis = std::atof(argv[2]);
+//    w_good_disappear = std::atof(argv[3]);
+//    w_boat_speed = std::atof(argv[4]);
+//    w_boat_size = std::atof(argv[5]);
+//    w_boat_transport = std::atof(argv[6]);
+//    w_berth_vis = std::atof(argv[7]);
+//    w_berth_fill = std::atof(argv[8]);
+//    w_berth_dis = std::atof(argv[9]);
+//    w_berth_arrive = std::atof(argv[10]);
     Init();
     for (int zhen = 1; zhen <= 15000; zhen++) {
-//		if (zhen == 200)
-//		{
-//			printf("move %d %d\n", 10, 1);
-//			puts("OK");
-//			fflush(stdout);
-//			continue;
-//		}
+        // if (zhen == 2000)
+        // {
+        // 	printf("move %d %d\n", 10, 1);
+        // 	puts("OK");
+        // 	fflush(stdout);
+        // 	continue;
+        // }
         for (int i = 0; i < robot_num; i++) {
             ban_boot[i][0] = ban_boot[i][1] = 0;
+            robot_move[i][0] = robot_move[i][1] = -1;
         }
         int id = Input(zhen);
-        for (int i = 1; i <= n; i++)
-            for (int t = 1; t <= n; t++) {
-                if (zhen - good_time[i][t] == 1000) {
-                    for (int j = 0; j < berth_num; j++) {
-                        if (pre_dis_berth[j][i][t] <= 20) {
-                            berth[j].near_good_num--;
-                        }
-                    }
-                }
-            }
-//        for (int i = 0; i < robot_num; i++) {
-//            robot_move[i] = -1;
-//        }
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
                 vis_good[i][j] = 0;
@@ -546,18 +498,12 @@ int main(int argc, char *argv[]) {
                 if (good_time[robot[i].x][robot[i].y] > 0 && zhen - good_time[robot[i].x][robot[i].y] < 1000 &&
                     targer_good[i][0] == robot[i].x && targer_good[i][1] == robot[i].y) {
                     printf("get %d\n", i);
-                    vis_ban[robot[i].x][robot[i].y] = 1;
-                    for (int j = 0; j < berth_num; j++) {
-                        // (x, y) 在 berth 附件的范围内
-                        if (pre_dis_berth[j][robot[i].x][robot[i].y] <= 20) {
-                            berth[j].near_good_num--;
-                        }
-                    }
+                    // vis_ban[robot[i].x][robot[i].y] = 1;
                 } // 拿着货物 而且在码头
             } else if (robot[i].goods == 1) {
                 if (ch[robot[i].x][robot[i].y] == 'B') {
                     printf("pull %d\n", i);
-                    vis_ban[robot[i].x][robot[i].y] = 1;
+                    // vis_ban[robot[i].x][robot[i].y] = 1;
                     berth[flag_berth[robot[i].x][robot[i].y]].size++;
                 }
             }
