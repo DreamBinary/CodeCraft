@@ -30,13 +30,9 @@ def train(path, params):
 
 
 def run_program(params):
-    # 解包参数
-    w_good_val, w_good_dis, w_good_disappear, w_boat_speed, w_boat_size, w_boat_transport, w_berth_vis, w_berth_fill, w_berth_dis, w_berth_arrive = params
+    params = " ".join(map(str, params))
 
-    params = " ".join(map(str, [w_good_val, w_good_dis, w_good_disappear, w_boat_speed, w_boat_size, w_boat_transport,
-                                w_berth_vis, w_berth_fill, w_berth_dis, w_berth_arrive]))
-
-    paths = sorted(glob.glob("./maps/*.txt"))
+    paths = sorted(glob.glob("./maps_all/*.txt"))
     # print(train(paths[0], params))
 
     with Pool() as p:
@@ -78,14 +74,14 @@ if __name__ == "__main__":
     param_space = [
         Real(0, 1.0, name='w_good_val'),
         Real(0, 1.0, name='w_good_dis'),
-        Real(0, 1.0, name='w_good_disappear'),
         Real(0, 1.0, name='w_boat_speed'),
         Real(0, 1.0, name='w_boat_size'),
         Real(0, 1.0, name='w_boat_transport'),
-        Real(0, 1.0, name='w_berth_vis'),
         Real(0, 1.0, name='w_berth_fill'),
         Real(0, 1.0, name='w_berth_dis'),
         Real(0, 1.0, name='w_berth_arrive'),
+        Real(0, 1.0, name='w_near_dis'),
+        Real(0, 1.0, name='w_near_val'),
     ]
 
     # 使用贝叶斯优化
