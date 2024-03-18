@@ -22,30 +22,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c2cc9e12-31a3-4076-a096-d036ab6b606d" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/eval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.15.38.16.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.16.55.07.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.00.49.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.02.04.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.03.12.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.04.13.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.05.16.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.06.11.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.07.09.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.07.57.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.39.38.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.50.15.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.50.20.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.50.23.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.50.29.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.52.25.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.52.32.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.17.53.31.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.18.01.54.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-16.19.14.27.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +67,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/root/CodeCraft&quot;
   }
 }</component>
@@ -137,7 +114,10 @@
       <workItem from="1710650792065" duration="1390000" />
       <workItem from="1710663209846" duration="1289000" />
       <workItem from="1710672969796" duration="168000" />
-      <workItem from="1710680218431" duration="1580000" />
+      <workItem from="1710680218431" duration="2230000" />
+      <workItem from="1710738654427" duration="28000" />
+      <workItem from="1710757303839" duration="105000" />
+      <workItem from="1710757442298" duration="2000" />
     </task>
     <servers />
   </component>
