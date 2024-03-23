@@ -278,7 +278,7 @@ int Input(int zhen) {
     return id;
 }
 
-void bfs_noway(int x, int y, int zhen, int id) {
+void bfs_noway(int x, int y, int id) {
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= n; j++)
             vis[i][j] = 0;
@@ -661,7 +661,7 @@ int main(int argc, char *argv[]) {
             }
             if (ck_move == 0) {
                 // vis_ban_no_move[robot[i].x][robot[i].y] = 1;
-                bfs_noway(robot[i].x, robot[i].y, zhen, i);
+                bfs_noway(robot[i].x, robot[i].y, i);
                 // printf("move %d %d\n", 100000+i, 0);
             } else {
                 last_robot_vis[i][0] = -1;

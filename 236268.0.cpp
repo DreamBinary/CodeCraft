@@ -6,6 +6,9 @@ const int n = 200;
 const int robot_num = 10;
 const int berth_num = 10;
 const int N = 210;
+
+
+
 // 29
 //  double w_good_val = 0.42463727858733424, w_good_dis = 0.6497573104028026;
 //  double w_boat_speed = 0.4158810599305153, w_boat_size = 1.1984817955771556, w_boat_transport = 0.05484796692193673;
@@ -14,28 +17,20 @@ const int N = 210;
 //  double max_near_dis = 100;
 
 // 30
-// double w_good_val = 0.13165919296790465, w_good_dis = 0.6656640513099531;
-// double w_boat_speed = 0.8122560009222373, w_boat_size = 1.997661418882335, w_boat_transport = 0.3125938292470241;
-// double w_berth_fill = 1.6629201305684502, w_berth_dis = 0.3812059855555989, w_berth_vis = 0.5895628505848022;
-// double w_near_val = 0.3121182828916405, w_near_dis = 0.04645857136775745;
-//
-
-double w_good_val = 0.4863057189296891;
-double w_good_dis = 0.8868439498723094;
-double w_boat_speed = 0.024617235768745756;
-double w_boat_size = 0.7832439756346595;
-double w_boat_transport = 0.15525831625701295;
-double w_berth_fill = 0.27078128246924754;
-double w_berth_dis = 0.08038432245180017;
-double w_berth_vis = 0.26606106612385333;
-double w_near_dis = 0.8725311208246415;
-double w_near_val = 0.006203446118222546;
-
-// double w_good_val = 0.3281954240023693, w_good_dis = 0.7526523237311188;
-// double w_boat_speed = 0.19947029201469985, w_boat_size = 0.6508774035602388, w_boat_transport = 0.15097886553988285;
-// double w_berth_fill = 0.20354750747122524, w_berth_dis = 0.3191984536890891, w_berth_vis = 0.1569375546732427;
-// double w_near_val = 0.78702889941648, w_near_dis = 0.07606433610943732;
+double w_good_val = 0.7352893534551818, w_good_dis = 0.4528259103572373;
+double w_boat_speed = 0.37249107290928135, w_boat_size = 1.7128009159115491, w_boat_transport = 0.21855574638773861;
+double w_berth_fill = 0.609350800042391, w_berth_dis = 0.8695861734254287, w_berth_vis = 1.0426945644537493;
+double w_near_dis = 0.012507646162134737, w_near_val = 0.8421242842245908;
 double max_near_dis = 100;
+
+
+
+// double w_good_val = 0.9945136435835381, w_good_dis = 0.7704898963889539;
+// double w_boat_speed = 0.25610043304165847, w_boat_size = 1.062010716501154, w_boat_transport = 0.03255963479112068;
+// double w_berth_fill = 0.2686989925778836, w_berth_dis = 0.0023343942588910376, w_berth_vis =1.6644247432907213;
+// double w_near_val = 0.04412405903968931, w_near_dis = 0.007085888346385573;
+// double max_near_dis = 100;
+
 int out;
 int money, boat_capacity, id;
 char ch[N][N];       // 地图
@@ -65,7 +60,7 @@ int total_num;
 int disapper_num;
 int get_num;
 int get_num_val;
-std::ofstream logFile;
+//std::ofstream logFile;
 
 struct Robot {
     int x, y, goods;
@@ -146,11 +141,10 @@ void bfs_dis(int x, int y, int id) {
         for (int i = 0; i < 4; i++) {
             int nx = now.first + dx[i];
             int ny = now.second + dy[i];
-            if (nx < 1 || nx > n || ny < 1 || ny > n)
-                continue;
             if (ch[nx][ny] == '*' || ch[nx][ny] == '#')
                 continue;
-
+            if (nx < 1 || nx > n || ny < 1 || ny > n)
+                continue;
             if (vis[nx][ny] == 1)
                 continue;
             q.emplace(nx, ny);
@@ -210,50 +204,6 @@ int find_berth_2(int zhen, int id) {
 void Init() {
     for (int i = 1; i <= n; i++)
         scanf("%s", ch[i] + 1); // 地图
-
-    if (ch[116][33] == '#' && ch[116][34] == '#' && ch[116][35] == '#' && ch[116][36] == '#' && ch[116][37] == '#' &&
-        ch[116][38] == '#' && ch[116][39] == '#' && ch[116][40] == '#' && ch[116][41] == '.' && ch[116][42] == '#') {
-        if (ch[116][43] == '.' && ch[116][44] == '.' && ch[116][45] == '#') {
-//            w_good_val = 0.287479836751839;
-//            w_good_dis = 0.9663114289962778;
-//            w_boat_speed = 0.004241785600217708;
-//            w_boat_size = 0.37204739737533005;
-//            w_boat_transport = 0.16424394403764012;
-//            w_berth_fill = 0.34697615688045563;
-//            w_berth_dis = 0.055290506387559404;
-//            w_berth_vis = 0.0974245964218429;
-//            w_near_dis = 0.5664785060087235;
-//            w_near_val = 0.008576972441300625;
-            w_good_val = 0.287;
-            w_good_dis = 0.966;
-            w_boat_speed = 0.004;
-            w_boat_size = 0.372;
-            w_boat_transport = 0.164;
-            w_berth_fill = 0.346;
-            w_berth_dis = 0.055;
-            w_berth_vis = 0.097;
-            w_near_dis = 0.566;
-            w_near_val = 0.008;
-        }
-    } else {
-        string s = "";
-        for (int i = 30; i <= 49; ++i) {
-            s.push_back(ch[91][i]);
-        }
-        if (s !=
-            "*.*.**BBBB********.*") {
-            w_good_val = 0.7056296154825781;
-            w_good_dis = 0.9778658171560587;
-            w_boat_speed = 0.5681255304731919;
-            w_boat_size = 0.917001926832806;
-            w_boat_transport = 0.12310135111289225;
-            w_berth_fill = 0.5622477749016358;
-            w_berth_dis = 0.09358710567851748;
-            w_berth_vis = 0.051175778129519914;
-            w_near_dis = 0.01666884745243247;
-            w_near_val = 0.010049649077356728;
-        }
-    }
     for (int i = 1; i <= n; i++)
         for (int t = 1; t <= n; t++)
             flag_berth[i][t] = -1;
@@ -375,7 +325,7 @@ int Input(int zhen) {
     return id;
 }
 
-void bfs_noway(int x, int y, int zhen, int id) {
+void bfs_noway(int x, int y, int id) {
     for (int i = 0; i < 4; i++) {
         int nx = x + dx[i];
         int ny = y + dy[i];
@@ -383,9 +333,6 @@ void bfs_noway(int x, int y, int zhen, int id) {
             continue;
         if (vis_ban[nx][ny] >= 1)
             continue;
-        if (ch[nx][ny] == '#' || ch[nx][ny] == '*') {
-            continue;
-        }
         if (ch[nx][ny] == 'A' || ch[nx][ny] == '.' || ch[nx][ny] == 'B') {
             printf("move %d %d\n", id, i);
             vis_ban[x][y]--;
@@ -433,11 +380,10 @@ void bfs_good(int x, int y, int zhen, int id) {
         for (int i = 0; i < 4; i++) {
             int nx = now.first + dx[i];
             int ny = now.second + dy[i];
-            if (nx < 1 || nx > n || ny < 1 || ny > n)
-                continue;
             if (ch[nx][ny] == '*' || ch[nx][ny] == '#')
                 continue;
-
+            if (nx < 1 || nx > n || ny < 1 || ny > n)
+                continue;
             if (vis[nx][ny] == 1)
                 continue;
             if ((vis_ban[nx][ny] >= 1 && dis == 0) || vis_ban[nx][ny] >= 2)
@@ -462,10 +408,21 @@ void bfs_good(int x, int y, int zhen, int id) {
     pair<int, int> temp;
     int ck = 0;
     int cycle = 0;
+    if (temp_x == x && temp_y == y) {
+        printf("get %d\n", id);
+        ck_move = 1;
+        return;
+    }
     while (fa[temp_x][temp_y][0] != x || fa[temp_x][temp_y][1] != y) {
         cycle++;
-        if (cycle > 10000)
+        if (cycle > 10000) {
+            // printf("move %d %d\n", 10000000+x, 1000000+y);
+            // printf("move %d %d\n", 10000000+pos.first, 1000000+pos.second);
+            // printf("move %d %d\n", 100+id,100000);
+            // break;
             exit(0);
+        }
+
         ck++;
         if (vis_robot[temp_x][temp_y] > 0) {
             temp = {temp_x, temp_y};
@@ -485,8 +442,6 @@ void bfs_good(int x, int y, int zhen, int id) {
             for (int i = l; i < l + 4; i++) {
                 int nx = x + dx[i % 4];
                 int ny = y + dy[i % 4];
-                if (nx < 1 || nx > n || ny < 1 || ny > n)
-                    continue;
                 if (ch[nx][ny] == '*' || ch[nx][ny] == '#' || vis_ban[nx][ny] >= 1)
                     continue;
                 if (nx == before[id][0] && ny == before[id][1])
@@ -592,13 +547,13 @@ void bfs_berth(int x, int y, int zhen, int id) {
             for (int i = 0; i < 4; i++) {
                 int nx = now.first + dx[i];
                 int ny = now.second + dy[i];
-                if (nx < 1 || nx > n || ny < 1 || ny > n) {
-                    continue;
-                }
                 if (ch[nx][ny] == '*' || ch[nx][ny] == '#') {
                     continue;
                 }
 
+                if (nx < 1 || nx > n || ny < 1 || ny > n) {
+                    continue;
+                }
                 if (vis[nx][ny] == 1) {
                     continue;
                 }
@@ -649,8 +604,6 @@ void bfs_berth(int x, int y, int zhen, int id) {
             for (int i = l; i < l + 4; i++) {
                 int nx = x + dx[i % 4];
                 int ny = y + dy[i % 4];
-                if (nx < 1 || nx > n || ny < 1 || ny > n)
-                    continue;
                 if (ch[nx][ny] == '*' || ch[nx][ny] == '#' || vis_ban[nx][ny] >= 1)
                     continue;
                 if (nx == before[id][0] && ny == before[id][1])
@@ -688,23 +641,22 @@ void bfs_berth(int x, int y, int zhen, int id) {
 int main(int argc, char *argv[]) {
     // out=std::atof(argv[1]);
     out = 12500;
-    //    w_good_val = std::atof(argv[1]);
-    //    w_good_dis = std::atof(argv[2]);
-    //    w_boat_speed = std::atof(argv[3]);
-    //    w_boat_size = std::atof(argv[4]);
-    //    w_boat_transport = std::atof(argv[5]);
-    //    w_berth_fill = std::atof(argv[6]);
-    //    w_berth_dis = std::atof(argv[7]);
-    //    w_berth_vis = std::atof(argv[8]);
-    //    w_near_dis = std::atof(argv[9]);
-    //    w_near_val = std::atof(argv[10]);
+    // w_good_val = std::atof(argv[1]);
+    // w_good_dis = std::atof(argv[2]);
+    // w_boat_speed = std::atof(argv[3]);
+    // w_boat_size = std::atof(argv[4]);
+    // w_boat_transport = std::atof(argv[5]);
+    // w_berth_fill = std::atof(argv[6]);
+    // w_berth_dis = std::atof(argv[7]);
+    // w_berth_vis = std::atof(argv[8]);
+    // w_near_dis = std::atof(argv[9]);
+    // w_near_val = std::atof(argv[10]);
 
     // 打开文件，如果文件不存在则创建它
-    //    logFile.open("log.txt");
+//    logFile.open("log.txt");
 
-
-    Init();
     max_near_dis = max_near_dis * 1.0 * w_near_dis;
+    Init();
     for (int zhen = 1; zhen <= 15000; zhen++) {
         // if (zhen == 2000)
         // {
@@ -714,22 +666,24 @@ int main(int argc, char *argv[]) {
         //     continue;
         // }
         int id = Input(zhen);
-        //        if (zhen >= 14995) {
-        //            logFile << "total_num: " << total_num << " disapper_num: " << disapper_num << " get_num: " << get_num
-        //                    << " get_num_val: " << get_num_val << endl;
-        //        }
-        //        if (zhen >= 14995) {
-        //            for (int i = 0; i < berth_num; i++) {
-        //                logFile << zhen << " " << i << " " << berth[i].size << endl;
-        //            }
-        //        }
-        //        if (zhen == 1) {
-        //            for (int i = 0; i < berth_num; i++) {
-        //                logFile << i << " " << berth[i].x << " " << berth[i].y << " " << berth[i].transport_time << " "
-        //                        << berth[i].loading_speed << " " << berth[i].size << " " << berth[i].load << " "
-        //                        << berth[i].arrive << " " << berth[i].near_val << endl;
-        //            }
-        //        }
+        // if (zhen >= 14995)
+        // {
+        //     logFile << "total_num: " << total_num << " disapper_num: " << disapper_num << " get_num: " << get_num << " get_num_val: " << get_num_val << endl;
+        // }
+        // if (zhen >= 14995)
+        // {
+        //     for (int i = 0; i < berth_num; i++)
+        //     {
+        //         logFile << zhen << " " << i << " " << berth[i].size << endl;
+        //     }
+        // }
+        // if (zhen == 1)
+        // {
+        //     for (int i = 0; i < berth_num; i++)
+        //     {
+        //         logFile << i << " " << berth[i].x << " " << berth[i].y << " " << berth[i].transport_time << " " << berth[i].loading_speed << " " << berth[i].size << " " << berth[i].load << " " << berth[i].arrive << " " << berth[i].near_val << endl;
+        //     }
+        // }
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
                 vis_good[i][j] = 0;
@@ -795,7 +749,7 @@ int main(int argc, char *argv[]) {
             }
             if (ck_move == 0) {
                 // printf("move %d %d\n", 10+i, 1);
-                bfs_noway(robot[i].x, robot[i].y, zhen, i);
+                bfs_noway(robot[i].x, robot[i].y, i);
             } else {
                 last_robot_vis[i][0] = -1;
                 last_robot_vis[i][1] = -1;

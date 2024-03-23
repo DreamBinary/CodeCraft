@@ -3,18 +3,49 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="CodeCraftSDK" targetName="main" />
+    </generated>
+  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3e73f27-12a0-4c7d-bd3b-d2c8245208bb" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+    <list default="true" id="b85047c2-970c-420d-bb37-0fe72cbb8982" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/CodeCraft.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CodeCraft.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_para.py" beforeDir="false" afterPath="$PROJECT_DIR$/best_para.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log_path" beforeDir="false" afterPath="$PROJECT_DIR$/log_path" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_19.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main_19.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_backup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main_backup.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.10.57.25.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.10.57.26.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.10.57.29.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.10.57.31.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.10.57.32.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.10.57.33.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.10.57.37.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.11.01.05.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.11.02.19.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.11.10.32.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.11.13.47.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.13.06.42.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay/2024-03-17.13.10.19.rep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.log" beforeDir="false" afterPath="$PROJECT_DIR$/train.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,34 +55,28 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="3.4" />
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2e2dMIpkn8wBexwvShc1SEzpUrB" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="2e4NJAZUr5UPRlmpi2xiztOrYqL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Python.best_para.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
@@ -68,56 +93,25 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="best_para" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CodeCraft" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/best_para.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
+    <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CodeCraftSDK" TARGET_NAME="main" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CodeCraftSDK" RUN_TARGET_NAME="main">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.best_para" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-python-sdk-5a2391486177-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13763.11" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="c3e73f27-12a0-4c7d-bd3b-d2c8245208bb" name="更改" comment="" />
-      <created>1711106560470</created>
+      <changelist id="b85047c2-970c-420d-bb37-0fe72cbb8982" name="更改" comment="" />
+      <created>1711159818185</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1711106560470</updated>
-      <workItem from="1711106561764" duration="1102000" />
-      <workItem from="1711107685997" duration="168000" />
+      <updated>1711159818185</updated>
+      <workItem from="1711159819536" duration="1072000" />
+      <workItem from="1711163375128" duration="4807000" />
+      <workItem from="1711172595795" duration="5385000" />
+      <workItem from="1711183397790" duration="29000" />
     </task>
     <servers />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CodeCraft$best_para.coverage" NAME="best_para 覆盖结果" MODIFIED="1711107207001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
