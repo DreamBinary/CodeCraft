@@ -3,143 +3,34 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader">{
-  &quot;useNewFormat&quot;: true
-}</component>
-  <component name="CMakeReloadState">
-    <option name="reloaded" value="true" />
-  </component>
-  <component name="CMakeRunConfigurationManager">
-    <generated>
-      <config projectName="CodeCraftSDK" targetName="main" />
-    </generated>
-  </component>
-  <component name="CMakeSettings">
-    <configurations>
-      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
-    </configurations>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b85047c2-970c-420d-bb37-0fe72cbb8982" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+    <list default="true" id="ce632727-8836-4c0c-9689-1f2c04a936d5" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CodeCraft.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CodeCraft.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/236268.0.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/238246.0.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/240385.375.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/240460.375.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/240726.25.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PreliminaryJudge" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/best_para.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/best_para_2024-03-23_14-01-09.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/best_para_2024-03-23_14-01-49.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/best_para_2024-03-23_14-02-18.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/best_para_2024-03-23_14-02-45.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/best_para_2024-03-23_14-04-13.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/best_para_2024-03-23_14-04-43.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/eval_2024-03-16_17-49-21.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/eval_2024-03-16_17-49-41.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/eval_2024-03-17_10-56-54.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log_path" beforeDir="false" afterPath="$PROJECT_DIR$/log_path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316153743_map-3.13.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316165432_map-3.13.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316170005_map1.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316170126_map2.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316170232_map3.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316170336_map4.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316170436_map5.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316170541_map6.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316170633_map7.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316170732_map8.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316173842_map1.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316173854_map1.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316175756_map2.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316175802_map2.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240316191351_map4.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240317130326_map8.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240317130939_map8.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/20240323111942_map8.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (10).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (11).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (11)t3_258.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (12).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (13).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (14).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (15).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (16).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (17).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (18).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (19).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (2).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (20).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (21).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (22).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (23).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (24).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (25).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (3).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (3)65.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (4).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (5).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (6).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (7).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (7)66.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (8).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (9).zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_11.22.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_19.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_backup.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/map1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maps/map1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/map2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maps/map2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/map3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maps/map3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/map4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/map5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/map6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/map7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/map8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/1429429_9e49fd2f583d4c68a68770db32cd5d9f_0_ce1adf06255ca7847b007a58d0f6031c4b1c011f01cdf21d068227d8786c8a7a.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/1429429_9e49fd2f583d4c68a68770db32cd5d9f_1_d75d4c065cb97bbfe32c968e3c4a22cc257d8261b03765f60d0c7b862d1736d3.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay/2024-03-23.11.20.54.rep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replayer/CodeCraft_2024_Replay.pck" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replayer/CodeCraft_2024_Replay.x86_64" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_all.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_new.sh" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ClangdSettings">
-    <option name="formatViaClangd" value="false" />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectApplicationVersion">
-    <option name="ide" value="CLion" />
-    <option name="majorVersion" value="2023" />
-    <option name="minorVersion" value="3.4" />
-  </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2e4NJAZUr5UPRlmpi2xiztOrYqL" />
+  <component name="ProjectId" id="2f28FXzKPaBS8mTBJI9AD1of9QW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -148,32 +39,14 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu/root/CodeCraft",
-    "settings.editor.selected.configurable": "settings.sync"
+    "last_opened_file_path": "V:/Compilers"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl.localhost\Ubuntu\root\CodeCraft" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CodeCraftSDK" TARGET_NAME="main" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CodeCraftSDK" RUN_TARGET_NAME="main">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -185,18 +58,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="b85047c2-970c-420d-bb37-0fe72cbb8982" name="更改" comment="" />
-      <created>1711159818185</created>
+      <changelist id="ce632727-8836-4c0c-9689-1f2c04a936d5" name="更改" comment="" />
+      <created>1712987712690</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1711159818185</updated>
-      <workItem from="1711159819536" duration="1072000" />
-      <workItem from="1711163375128" duration="4807000" />
-      <workItem from="1711172595795" duration="5385000" />
-      <workItem from="1711183397790" duration="29000" />
-      <workItem from="1712813864962" duration="9000" />
-      <workItem from="1712814154408" duration="72000" />
-      <workItem from="1712814408862" duration="936000" />
+      <updated>1712987712690</updated>
+      <workItem from="1712987715439" duration="177000" />
+      <workItem from="1713081184899" duration="544000" />
     </task>
     <servers />
   </component>
